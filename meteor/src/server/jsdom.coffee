@@ -3,11 +3,6 @@ jsdom = Npm.require('jsdom')
 _.extend(jsdom, {
   envSync: Meteor.wrapAsync(jsdom.env, jsdom)
 
-#  envSync: (args...) ->
-#
-#    Async.runSync (done)->
-#      cb = (errors, window)->
-#        done(errors, window)
-#      args.push(cb)
-#      jsdom.env.apply jsdom, args
+  scripts:
+    jQuery: Assets.getText('meteor/src/private/js/jquery-1.11.2.min.js')
 })
